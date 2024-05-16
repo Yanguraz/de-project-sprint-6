@@ -6,7 +6,7 @@ CREATE TABLE STV2024031225__STAGING.group_log (
 	user_id int,
 	user_id_from int,
 	event varchar(6),
-	datetime datetime
+	date_time datetime
 );
 
 DROP TABLE IF EXISTS STV2024031225__STAGING.l_user_group_activity;
@@ -49,7 +49,7 @@ SELECT
 	uga.hk_l_user_group_activity,
 	gl.user_id_from,
 	gl.event,
-	gl.datetime AS event_dt,
+	gl.date_time AS event_dt,
 	now() AS load_dt,
 	'S3' AS load_src
 FROM STV2024031225__STAGING.group_log AS gl
